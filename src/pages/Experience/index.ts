@@ -1,5 +1,5 @@
 import { lazy } from 'react';
 
-const ExperiencePageAsync = lazy(() => import('./ui/Experience'));
+const ExperiencePageAsync = lazy(() => import('./Experience'));
 
 export { ExperiencePageAsync as ExperiencePage };

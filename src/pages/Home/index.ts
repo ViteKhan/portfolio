@@ -1,5 +1,5 @@
 import { lazy } from 'react';
 
-const HomePageAsync = lazy(() => import('./ui/Home'));
+const HomePageAsync = lazy(() => import('./Home'));
 
 export { HomePageAsync as HomePage };

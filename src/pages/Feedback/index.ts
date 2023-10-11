@@ -1,5 +1,5 @@
 import { lazy } from 'react';
 
-const FeedbackPageAsync = lazy(() => import('./ui/Feedback'));
+const FeedbackPageAsync = lazy(() => import('./Feedback'));
 
 export { FeedbackPageAsync as FeedbackPage };
