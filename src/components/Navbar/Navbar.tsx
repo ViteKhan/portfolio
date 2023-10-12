@@ -13,7 +13,6 @@ export const Navbar: FC<NavbarProps> = ({ direction = 'row' }) => {
 
   return (
     <Flex gap={'sm'} flexDirection={direction}>
-      {/*<Link to={RoutePath.home}>Home</Link>*/}
       <Link to={RoutePath.skills}>{t('Skills')}</Link>
       <Link to={RoutePath.experience}>{t('Experience')}</Link>
       <Link to={RoutePath.education}>{t('Education')}</Link>

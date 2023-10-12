@@ -8,3 +8,8 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.PROJECTS]: '/projects',
   [AppRoutes.SKILLS]: '/skills',
 };
+
+export const LANGUAGES = [
+  { id: 'en', name: 'English' },
+  { id: 'ru', name: 'Russian' },
+];
