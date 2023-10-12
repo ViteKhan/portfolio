@@ -1,8 +1,9 @@
 import { Box, chakra, useBreakpointValue } from '@chakra-ui/react';
-import { LangSwitcher } from '../LangSwitcher';
+import { Logo } from '../Logo';
 import { Navbar } from '../Navbar';
+import { Row } from '../Row';
 import { Sidebar } from '../Sidebar';
-import { ThemeSwitcher } from '../ThemeSwitcher';
+import { Switchers } from '../Switchers';
 
 const HeaderContainer = chakra(Box, {
   baseStyle: {
@@ -16,6 +17,7 @@ const HeaderContainer = chakra(Box, {
     py: 'sm',
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'space-between',
   },
 });
 
@@ -23,9 +25,14 @@ export const Header = () => {
   const isNavbarVisible = useBreakpointValue({ base: false, md: true });
   return (
     <HeaderContainer as={'header'}>
-      {isNavbarVisible ? <Navbar/> : <Sidebar/>}
-      <ThemeSwitcher/>
-      <LangSwitcher/>
+      <Row>
+        {!isNavbarVisible && <Sidebar/>}
+        <Logo/>
+      </Row>
+      <Row>
+        {isNavbarVisible && <Navbar/>}
+        <Switchers/>
+      </Row>
     </HeaderContainer>
   );
 };
