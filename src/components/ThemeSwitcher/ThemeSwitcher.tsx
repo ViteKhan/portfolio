@@ -1,6 +1,7 @@
 import { IconButton, useColorMode } from '@chakra-ui/react';
-import { ImSun } from 'react-icons/im';
-import { FiMoon } from 'react-icons/fi';
+import { BsFillSunFill } from 'react-icons/bs'
+import { PiMoonFill } from 'react-icons/pi';
+import { THEME } from '../../types';
 
 export const ThemeSwitcher = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -8,8 +9,10 @@ export const ThemeSwitcher = () => {
   return (
     <IconButton
       aria-label={'theme'}
+      variant={'theme'}
       onClick={toggleColorMode}
-      icon={colorMode === 'light' ? <FiMoon/> : <ImSun/>}
+      icon={colorMode === THEME.LIGHT ? <PiMoonFill/> : <BsFillSunFill/>}
+      isRound
     />
-  )
+  );
 };

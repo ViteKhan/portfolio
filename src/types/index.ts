@@ -6,3 +6,8 @@ export enum AppRoutes {
   PROJECTS = 'projects',
   SKILLS = 'skills',
 }
+
+export enum THEME {
+  DARK = 'dark',
+  LIGHT = 'light',
+}

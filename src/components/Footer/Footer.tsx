@@ -7,10 +7,10 @@ const FooterContainer = chakra(Box, {
     bottom: 0,
     left: 0,
     right: 0,
-    height: '50px',
-    background: 'gray',
-    px: 'lg',
+    height: '60px',
+    px: ['sm', 'md', 'lg'],
     py: 'sm',
+    backdropFilter: 'blur(4px)',
   },
 });
 

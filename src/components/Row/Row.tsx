@@ -5,6 +5,6 @@ export const Row = chakra(Flex, {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 'md'
+    gap: 'sm',
   },
 });

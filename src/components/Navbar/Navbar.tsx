@@ -1,23 +1,26 @@
 import { Flex } from '@chakra-ui/react';
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
-import { RoutePath } from '../../constants';
+import { NAV_LINKS } from '../../constants';
+import { NavLink } from '../NavLink';
 
 interface NavbarProps {
   direction?: 'column' | 'row';
+  onClick?: () => void;
 }
 
-export const Navbar: FC<NavbarProps> = ({ direction = 'row' }) => {
-  const { t } = useTranslation();
+export const Navbar: FC<NavbarProps> = ({ direction = 'row', onClick }) => {
 
   return (
-    <Flex gap={'sm'} flexDirection={direction}>
-      <Link to={RoutePath.skills}>{t('Skills')}</Link>
-      <Link to={RoutePath.experience}>{t('Experience')}</Link>
-      <Link to={RoutePath.education}>{t('Education')}</Link>
-      <Link to={RoutePath.projects}>{t('Projects')}</Link>
-      <Link to={RoutePath.feedback}>{t('Feedback')}</Link>
+    <Flex gap={'md'} flexDirection={direction}>
+      {NAV_LINKS.map(({ to, title, icon }) =>
+        <NavLink
+          key={to}
+          to={to}
+          title={title}
+          icon={icon}
+          onClick={onClick}
+        />
+      )}
     </Flex>
   );
 };

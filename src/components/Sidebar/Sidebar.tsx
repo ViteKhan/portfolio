@@ -26,7 +26,7 @@ export const Sidebar = () => {
         <DrawerContent>
           <DrawerHeader borderBottomWidth='1px'><Logo/></DrawerHeader>
           <DrawerBody>
-            <Navbar direction={'column'}/>
+            <Navbar direction={'column'} onClick={onClose}/>
           </DrawerBody>
         </DrawerContent>
       </Drawer>

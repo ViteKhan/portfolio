@@ -5,8 +5,10 @@ import { routerConfig } from './AppRouterConfig';
 
 const Main = chakra(Flex, {
   baseStyle: {
-    padding: 'lg',
-    margin: '40px 0px',
+    px: ['sm', 'md', 'lg'],
+    py: 'lg',
+    my: '60px',
+    mx: 'none',
   },
 });
 

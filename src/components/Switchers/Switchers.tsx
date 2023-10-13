@@ -1,12 +1,12 @@
-import { Flex } from '@chakra-ui/react';
 import { LangSwitcher } from '../LangSwitcher';
+import { Row } from '../Row';
 import { ThemeSwitcher } from '../ThemeSwitcher';
 
 export const Switchers = () => {
   return (
-    <Flex gap={'sm'}>
+    <Row>
       <ThemeSwitcher/>
       <LangSwitcher/>
-    </Flex>
+    </Row>
   );
 };

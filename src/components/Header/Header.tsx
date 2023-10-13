@@ -1,4 +1,4 @@
-import { Box, chakra, useBreakpointValue } from '@chakra-ui/react';
+import { Box, chakra, useBreakpointValue, useColorModeValue } from '@chakra-ui/react';
 import { Logo } from '../Logo';
 import { Navbar } from '../Navbar';
 import { Row } from '../Row';
@@ -11,9 +11,8 @@ const HeaderContainer = chakra(Box, {
     top: 0,
     left: 0,
     right: 0,
-    height: '50px',
-    background: 'gray',
-    px: 'lg',
+    height: '60px',
+    px: ['sm', 'md', 'lg'],
     py: 'sm',
     display: 'flex',
     alignItems: 'center',
@@ -22,14 +21,19 @@ const HeaderContainer = chakra(Box, {
 });
 
 export const Header = () => {
-  const isNavbarVisible = useBreakpointValue({ base: false, md: true });
+  const isNavbarVisible = useBreakpointValue({ base: false, md: false, lg: true });
+  const boxShadow = useColorModeValue(
+    '0 2px 4px rgba(179, 185, 196, 0.4)',
+    '0 2px 4px rgba(69, 79, 89, 0.4)'
+  );
+
   return (
-    <HeaderContainer as={'header'}>
+    <HeaderContainer as={'header'} boxShadow={boxShadow}>
       <Row>
         {!isNavbarVisible && <Sidebar/>}
         <Logo/>
       </Row>
-      <Row>
+      <Row gap={'lg'}>
         {isNavbarVisible && <Navbar/>}
         <Switchers/>
       </Row>

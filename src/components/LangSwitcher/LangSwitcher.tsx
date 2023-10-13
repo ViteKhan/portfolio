@@ -8,17 +8,18 @@ export const LangSwitcher = () => {
   const { i18n, t } = useTranslation();
 
   return (
-    <Menu>
-      <MenuButton as={Button} leftIcon={<IoLanguageSharp/>}>
+    <Menu isLazy >
+      <MenuButton as={Button} variant={'lang'} leftIcon={<IoLanguageSharp/>}>
         {i18n.language.toUpperCase()}
       </MenuButton>
       <MenuList>
-        {LANGUAGES.map(language => (
+        {LANGUAGES.map(({ id, name, icon }) => (
           <MenuItem
-            key={language.id}
-            onClick={() => i18n.changeLanguage(language.id)}
+            key={id}
+            onClick={() => i18n.changeLanguage(id)}
+            gap={'xs'}
           >
-            {t(language.name)}
+            {icon} {t(name)}
           </MenuItem>
         ))}
       </MenuList>
